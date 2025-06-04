@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Header from "@/components/shared/header/Header";
+import Footer from "@/components/shared/footer/Footer";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -39,11 +41,15 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${actay.variable} ${guanoApes.variable} antialiased`}
+        className={`${montserrat.variable} ${actay.variable} ${guanoApes.variable} relative z-[1] flex min-h-screen flex-col antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
