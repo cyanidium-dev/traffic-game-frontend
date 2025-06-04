@@ -7,10 +7,7 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="font-actay text-[12px] font-bold uppercase leading-[0] 
-    bg-gradient-to-tr from-white via-white to-[#FFB5E6] 
-    bg-clip-text text-transparent 
-    [text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]"
+      className="font-actay text-[12px] font-bold uppercase animate-text-glow"
     >
       {t("logo")}
     </Link>

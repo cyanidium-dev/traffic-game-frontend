@@ -58,3 +58,42 @@
     padding: 0;
   }
 }
+
+@layer utilities {
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-text-shimmer {
+    background-image: linear-gradient(125deg, #fff 22.37%, #ffb5e6 94.04%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shimmer 4s ease-in-out infinite;
+    text-shadow: 3.508px 2.923px 8.916px rgba(255, 0, 166, 0.2);
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      text-shadow: 3.508px 2.923px 8.916px rgba(255, 0, 166, 0.05);
+    }
+    50% {
+      text-shadow: 3.508px 2.923px 12px rgba(255, 0, 166, 0.6);
+    }
+  }
+
+  .animate-text-glow {
+    background-image: linear-gradient(125deg, #fff 22.37%, #ffb5e6 94.04%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glow 2.8s ease-in-out infinite;
+  }
+}
