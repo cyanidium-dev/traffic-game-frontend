@@ -1,6 +1,10 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "homePage": {},
+  "header": {
+    "logo": "Traffic game",
+    "home": "Главная",
+    "vacancies": "Вакансии",
+    "blog": "Блог",
+    "contacts": "Контакты"
   }
 }
