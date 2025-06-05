@@ -1,10 +1,24 @@
 {
   "homePage": {},
   "header": {
-    "logo": "Traffic game",
+    "logo": "Traffic Game",
     "home": "Главная",
     "vacancies": "Вакансии",
     "blog": "Блог",
     "contacts": "Контакты"
+  },
+  "footer": {
+    "logo": "Traffic Game",
+    "description": "Мы закупаем большой объем качественного трафика.",
+    "home": "Главная",
+    "vacancies": "Вакансии",
+    "blog": "Блог",
+    "contacts": "Контакты",
+    "legalData": "Юридические данные",
+    "publicContract": "Публичный договор",
+    "offer": "Оферта",
+    "policy": "Конфиденциальность",
+    "rights": "© 2025 Traffic Game",
+    "developedBy": "Website developed by cyanidium.dev"
   }
 }

@@ -1,13 +1,17 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
-export default function Logo() {
+interface LogoProps {
+  className: string;
+}
+
+export default function Logo({ className }: LogoProps) {
   const t = useTranslations("header");
 
   return (
     <Link
       href="/"
-      className="font-actay text-[12px] font-bold uppercase animate-text-glow"
+      className={`inline-block font-actay font-bold uppercase animate-text-glow ${className}`}
     >
       {t("logo")}
     </Link>
