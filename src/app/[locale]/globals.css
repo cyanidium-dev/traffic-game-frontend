@@ -68,7 +68,7 @@
       text-shadow: 3.508px 2.923px 8.916px rgba(255, 0, 166, 0.05);
     }
     50% {
-      text-shadow: 3.508px 2.923px 12px rgba(255, 0, 166, 0.5);
+      text-shadow: 3.508px 2.923px 12px rgba(255, 0, 166, 0.6);
     }
   }
 
@@ -77,6 +77,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: glow 2.8s ease-in-out infinite;
+    animation: glow 2s ease-in-out infinite;
   }
 }

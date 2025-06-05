@@ -21,7 +21,7 @@ export default function Header() {
         <div
           className={`absolute -top-6 left-0 w-full h-16 xl:h-17 rounded-full z-[-20] transition duration-500 ease-in-out ${
             isScrolled
-              ? "bg-black/30 backdrop-blur-md shadow-md"
+              ? "bg-black/30 backdrop-blur-md shadow-lg"
               : "bg-transparent"
           }`}
         />

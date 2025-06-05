@@ -33,7 +33,7 @@ export default function BenefitItem({ benefit }: BenefitItemProps) {
   useEffect(() => {
     if (inView) {
       const controls = animate(count, number, {
-        duration: 2.8,
+        duration: 3.8,
         ease: "easeOut",
       });
       return () => controls.stop();

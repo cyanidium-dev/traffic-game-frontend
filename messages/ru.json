@@ -4,6 +4,9 @@
       "employees": "Штат сотрудников",
       "budgets": "Анлим бюджеты",
       "experience": "года опыта"
+    },
+    "partners": {
+      "title": "С кем мы работаем"
     }
   },
   "header": {
