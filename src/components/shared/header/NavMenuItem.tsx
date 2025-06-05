@@ -13,7 +13,7 @@ export default function NavMenuItem({ menuItem }: NavMenuItemProps) {
       <Link
         href={link}
         className="block font-actay text-[12px] font-bold uppercase
-        leading-[120%] xl:hover:text-main focus-visible:text-main transition duration-300 ease-in-out"
+        leading-[120%] xl:hover:text-main-light focus-visible:text-main-light transition duration-300 ease-in-out"
       >
         {title}
       </Link>

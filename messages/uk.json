@@ -19,6 +19,9 @@
     "offer": "Оферта",
     "policy": "Конфиденциальность",
     "rights": "© 2025 Traffic Game",
-    "developedBy": "Website developed by cyanidium.dev"
+    "developedBy": {
+      "partOne": "Website developed by ",
+      "partTwo": "cyanidium.dev"
+    }
   }
 }
