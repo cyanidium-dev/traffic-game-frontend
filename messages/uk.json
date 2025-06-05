@@ -1,5 +1,11 @@
 {
-  "homePage": {},
+  "homePage": {
+    "benefits": {
+      "employees": "Штат сотрудников",
+      "budgets": "Анлим бюджеты",
+      "experience": "года опыта"
+    }
+  },
   "header": {
     "logo": "Traffic Game",
     "home": "Главная",
