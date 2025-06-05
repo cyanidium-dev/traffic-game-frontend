@@ -18,7 +18,7 @@ export default function NavMenu() {
   ];
 
   return (
-    <div className="flex justify-between mb-[54px] md:mb-0">
+    <div className="flex sm:justify-between gap-x-15 md:gap-x-8 lg:gap-x-[76px] mb-[54px] md:mb-0 sm:w-[60%]">
       <ul className="flex flex-col gap-y-4">
         {navListOne.map(({ title, link }, idx) => (
           <li key={idx}>

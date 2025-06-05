@@ -11,14 +11,20 @@ export default function Footer() {
   return (
     <footer className="pt-[99px] xl:pt-[214px] pb-8 xl:pb-25">
       <Container>
-        <Logo className="mb-3 text-[14px]" />
-        <p className="mb-[43px] max-w-[195px] text-[12px] font-light leading-[120%]">
-          {t("description")}
-        </p>
-        <Socials />
-        <Contacts />
-        <NavMenu />
-        <div className="flex flex-col gap-y-3 md:flex-row md:justify-between">
+        <div className="md:flex justify-between">
+          <div className="mb-[54px] md:mb-[68px]">
+            <Logo className="mb-3 text-[14px]" />
+            <p className="mb-[43px] max-w-[195px] text-[12px] font-light leading-[120%]">
+              {t("description")}
+            </p>
+            <Socials />
+          </div>
+          <div className="sm:flex md:gap-8 lg:gap-x-[76px] sm:justify-between">
+            <Contacts />
+            <NavMenu />
+          </div>
+        </div>
+        <div className="flex flex-col gap-y-3 sm:flex-row sm:justify-between">
           <p className="text-[16px] font-normal leading-[180%]">
             {t("rights")}
           </p>
