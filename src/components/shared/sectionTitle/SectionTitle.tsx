@@ -32,6 +32,7 @@ export default function SectionTitle({
       variants={container}
       initial="hidden"
       animate="visible"
+      whileInView="visible"
     >
       {letters.map((char, index) => (
         <motion.span
