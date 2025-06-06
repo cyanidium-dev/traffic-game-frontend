@@ -31,7 +31,8 @@ export default function SectionTitle({
       className={`will-change-transform font-actay font-bold leading-none uppercase text-transparent bg-clip-text bg-[linear-gradient(125deg,_#fff_22.37%,_#ffb5e6_94.04%)] [text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)] ${className}`}
       variants={container}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
       {letters.map((char, index) => (
         <motion.span

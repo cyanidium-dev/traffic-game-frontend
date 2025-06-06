@@ -9,7 +9,7 @@ export default function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="pt-[99px] xl:pt-[214px] pb-8 xl:pb-25">
+    <footer className="pt-[99px] xl:pt-[106px] pb-8 xl:pb-25">
       <Container>
         <div className="md:flex justify-between">
           <div className="mb-[54px] md:mb-[68px]">
