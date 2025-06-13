@@ -2,7 +2,7 @@
 import Container from "@/components/shared/container/Container";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { listVariants } from "@/utils/animationVariants";
+import { fadeInAnimation, listVariants } from "@/utils/animationVariants";
 import BenefitsImages from "./BenefitsImages";
 import BenefitItem from "./BenefitItem";
 
@@ -16,7 +16,14 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="relative pt-25 pb-24 md:py-[47px] bg-main">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      exit="exit"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInAnimation({})}
+      className="relative pt-25 pb-24 md:py-[47px] bg-main"
+    >
       <BenefitsImages />
       <Container>
         <motion.ul
@@ -24,7 +31,7 @@ export default function Benefits() {
           whileInView="visible"
           exit="exit"
           viewport={{ once: true, amount: 0.2 }}
-          variants={listVariants({ staggerChildren: 0.3, delayChildren: 0.4 })}
+          variants={listVariants({ staggerChildren: 0.3, delayChildren: 0.2 })}
           className="flex flex-col md:flex-row gap-6 md:gap-5"
         >
           {benefitsList.map((benefit, idx) => (
@@ -32,6 +39,6 @@ export default function Benefits() {
           ))}
         </motion.ul>
       </Container>
-    </section>
+    </motion.section>
   );
 }

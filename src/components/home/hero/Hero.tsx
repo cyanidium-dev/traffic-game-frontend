@@ -16,7 +16,8 @@ export default function Hero() {
         whileInView="visible"
         exit="exit"
         viewport={{ once: true, amount: 0.1 }}
-        variants={fadeInAnimation({ delay: 1 })}
+        variants={fadeInAnimation({ delay: 1.4 })}
+        className="absolute z-10 md:-z-10 top-3 md:top-[705px] xl:top-[825px] left-[-1vw] md:left-[-3vw] w-full h-[27px] xl:h-[50px]"
       >
         <MarqueeLine />
       </motion.div>

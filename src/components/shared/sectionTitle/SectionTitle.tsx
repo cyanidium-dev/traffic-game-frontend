@@ -9,14 +9,14 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.08,
     },
   },
 };
 
 const letter = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.7 } },
 };
 
 export default function SectionTitle({
