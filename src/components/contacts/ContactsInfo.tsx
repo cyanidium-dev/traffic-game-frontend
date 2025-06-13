@@ -1,3 +1,9 @@
+import Container from "../shared/container/Container";
+
 export default function ContactsInfo() {
-  return <section>ContactsInfo</section>;
+  return (
+    <section>
+      <Container></Container>
+    </section>
+  );
 }
