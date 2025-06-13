@@ -34,7 +34,7 @@ export default function About() {
         whileInView="visible"
         exit="exit"
         viewport={{ once: true, amount: 0.1 }}
-        variants={fadeInAnimation({ delay: 1.4 })}
+        variants={fadeInAnimation({ delay: 0.4 })}
         className="ml-[-1vw] md:ml-[-3vw] w-full h-[50px]"
       >
         <MarqueeLine />

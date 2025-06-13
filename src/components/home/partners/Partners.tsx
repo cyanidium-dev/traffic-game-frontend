@@ -20,7 +20,7 @@ export default function Partners() {
         whileInView="visible"
         exit="exit"
         viewport={{ once: true, amount: 0.2 }}
-        variants={fadeInAnimation({ delay: 1.5 })}
+        variants={fadeInAnimation({ delay: 0.4 })}
       >
         <MarqueeLine />
       </motion.div>
