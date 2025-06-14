@@ -32,7 +32,7 @@ export default function SectionTitle({
     <motion.h2
       className={`will-change-transform font-actay font-bold leading-none uppercase text-transparent bg-clip-text ${
         variant === "light"
-          ? "bg-[linear-gradient(125deg,_#fff_22.37%,_#ffb5e6_94.04%)]"
+          ? "bg-[linear-gradient(125deg,_#ffffff_22.37%,_#ffb5e6_94.04%)]"
           : "bg-[linear-gradient(112deg,_#1E1E1E_30.78%,_#B22A7C_80.94%)]"
       } [text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)] ${className}`}
       variants={container}
