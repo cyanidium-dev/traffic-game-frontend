@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 
-interface SectionTitleProps {
+interface PageTitleProps {
   children: string;
   className?: string;
   variant?: "light" | "dark";
@@ -20,16 +20,16 @@ const letter = {
   visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.7 } },
 };
 
-export default function SectionTitle({
+export default function PageTitle({
   children,
   className = "",
   variant = "light",
-}: SectionTitleProps) {
+}: PageTitleProps) {
   // розбиваємо рядок на масив літер
   const letters = children.split("");
 
   return (
-    <motion.h2
+    <motion.h1
       className={`will-change-transform font-actay font-bold leading-none uppercase text-transparent bg-clip-text ${
         variant === "light"
           ? "bg-[linear-gradient(125deg,_#fff_22.37%,_#ffb5e6_94.04%)]"
@@ -50,6 +50,6 @@ export default function SectionTitle({
           {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
-    </motion.h2>
+    </motion.h1>
   );
 }
