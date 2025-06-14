@@ -19,7 +19,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   return (
     <>
       <Hero />
-      <BlogList />
+      <BlogList postsList={postsList} />
     </>
   );
 }
