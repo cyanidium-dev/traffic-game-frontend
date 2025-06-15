@@ -3,6 +3,7 @@ import Container from "../container/Container";
 import BurgerButton from "./BurgerButton";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Logo from "../logo/Logo";
+import BurgerMenu from "./BurgerMenu";
 import NavMenu from "./NavMenu";
 import { useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
@@ -27,16 +28,22 @@ export default function Header() {
               : "bg-transparent"
           }`}
         />
-        <Logo className="text-[12px]" />
+        <Logo className="text-[12px] z-[60]" />
         <div className="flex items-center gap-x-6 md:gap-x-14">
           <LocaleSwitcher />
-          <NavMenu />
+          <div className="hidden md:block">
+            <NavMenu />
+          </div>
           <BurgerButton
             isHeaderMenuOpened={isHeaderMenuOpened}
             toggleHeaderMenuOpen={toggleHeaderMenuOpen}
           />
         </div>
       </Container>
+      <BurgerMenu
+        isHeaderMenuOpened={isHeaderMenuOpened}
+        setIsHeaderMenuOpened={setIsHeaderMenuOpened}
+      />
     </header>
   );
 }

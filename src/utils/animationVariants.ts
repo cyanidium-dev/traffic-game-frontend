@@ -125,11 +125,11 @@ export const cartItemVariants = {
 };
 
 export const burgerMenuVariants = {
-  hidden: { x: "100%", opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  hidden: { x: 0, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
   exit: {
     x: 0,
     opacity: 0,
-    transition: { duration: 0.5, ease: "easeIn" },
+    transition: { duration: 0.3, ease: "easeIn" },
   },
 };

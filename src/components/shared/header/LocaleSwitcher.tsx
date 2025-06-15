@@ -59,7 +59,7 @@ export default function LocaleSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="cursor-pointer flex items-center gap-[9px] outline-none xl:hover:text-main-light focus-visible:text-main-light transition duration-300 ease-in-out"
+        className="relative z-[60] cursor-pointer flex items-center gap-[9px] outline-none xl:hover:text-main-light focus-visible:text-main-light transition duration-300 ease-in-out"
       >
         <span className="text-[16px] font-bold leading-[125%] uppercase">
           {currentLocale === "uk" ? "UA" : currentLocale}
@@ -74,7 +74,7 @@ export default function LocaleSwitcher() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute right-0 mt-1 w-[65px] bg-white shadow-social rounded-[8px] z-50"
+            className="absolute right-0 mt-1 w-[65px] bg-white shadow-social rounded-[8px] z-[60]"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
