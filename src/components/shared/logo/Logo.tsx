@@ -11,7 +11,7 @@ export default function Logo({ className }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-block font-actay font-bold uppercase animate-text-glow ${className}`}
+      className={`relative z-50 inline-block font-actay font-bold uppercase animate-text-glow ${className}`}
     >
       {t("logo")}
     </Link>

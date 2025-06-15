@@ -8,8 +8,10 @@ import { useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 export default function Header() {
+  const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const toggleHeaderMenuOpen = () => setIsHeaderMenuOpened(!isHeaderMenuOpened);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 20);
@@ -29,7 +31,10 @@ export default function Header() {
         <div className="flex items-center gap-x-6 md:gap-x-14">
           <LocaleSwitcher />
           <NavMenu />
-          <BurgerButton />
+          <BurgerButton
+            isHeaderMenuOpened={isHeaderMenuOpened}
+            toggleHeaderMenuOpen={toggleHeaderMenuOpen}
+          />
         </div>
       </Container>
     </header>
