@@ -28,7 +28,7 @@ export default function BenefitItem({ benefit }: BenefitItemProps) {
   );
 
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 1 });
+  const inView = useInView(ref, { once: true, amount: 0.2 });
 
   useEffect(() => {
     if (inView) {

@@ -1,10 +1,10 @@
 import * as motion from "motion/react-client";
 import { fadeInAnimation } from "@/utils/animationVariants";
-import MainButton from "@/components/shared/buttons/MainButton";
 import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import { useTranslations } from "next-intl";
 import MarqueeLine from "./MarqueeLine";
+import JoinUs from "../../shared/joinUs/JoinUs";
 
 export default function Hero() {
   const t = useTranslations("homePage.hero");
@@ -25,19 +25,19 @@ export default function Hero() {
         <SectionTitle className="max-w-[311px] xl:max-w-[624px] mx-auto md:mx-0 mb-3 xl:mb-0 text-[64px] xl:text-[129px] text-center md:text-left">
           {t("title")}
         </SectionTitle>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimation({ y: 30, delay: 1 })}
-          className="md:max-w-[251px]"
-        >
-          <h1 className="mb-[368px] md:mb-7 text-[14px] font-light text-center md:text-left">
+        <div className="md:max-w-[251px]">
+          <motion.h1
+            initial="hidden"
+            whileInView="visible"
+            exit="exit"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInAnimation({ y: 30, scale: 0.9, delay: 1 })}
+            className="mb-[368px] md:mb-7 text-[14px] font-light text-center md:text-left"
+          >
             {t("description")}
-          </h1>
-          <MainButton> {t("button")}</MainButton>
-        </motion.div>
+          </motion.h1>
+          <JoinUs buttonText={t("button")} />
+        </div>
       </Container>
     </section>
   );

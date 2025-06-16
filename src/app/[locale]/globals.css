@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
+@plugin 'tailwind-scrollbar' {
+  preferredstrategy: "pseudoelements";
+  nocompatible: true;
+}
+
 :root {
   --black: #121212;
+  --dark: #1e1e1e;
   --white: #ffffff;
   --main: #f80498;
   --main-light: #ff87d0;
@@ -12,6 +18,7 @@
 @theme inline {
   --color-white: #ffffff;
   --color-black: #121212;
+  --color-dark: #1e1e1e;
   --color-main: #f80498;
   --color-main-light: #ff87d0;
   --color-pink-light: #ffb5e6;
@@ -90,4 +97,22 @@
     color: transparent;
     animation: glow 2s ease-in-out infinite;
   }
+}
+
+.popup-scroll::-webkit-scrollbar-track {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotation {
+  animation: rotation 1600ms linear infinite;
 }
