@@ -1,5 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import IconButton from "../buttons/IconButton";
+import Image from "next/image";
 
 interface ModalProps {
   isPopUpShown: boolean;
@@ -22,8 +23,15 @@ export default function Modal({
           : "pointer-events-none opacity-0 scale-90"
       } fixed left-1/2 bottom-0 transform -translate-x-1/2 transition duration-[600ms] ease-out z-[80] w-[310px] xl:w-[431px] max-h-[calc(100dvh-90px)] 
       xl:max-h-[calc(100dvh-188px)] overflow-y-auto bg-white rounded-[8px] scrollbar scrollbar-w-[3px] scrollbar-thumb-rounded-full 
-      scrollbar-track-rounded-full scrollbar-thumb-transparent scrollbar-track-main popup-scroll ${className}`}
+      scrollbar-track-rounded-full scrollbar-thumb-transparent scrollbar-track-main popup-scroll overflow-hidden ${className}`}
     >
+      <Image
+        src="/images/modal/figures.webp"
+        width={847}
+        height={851}
+        alt="background"
+        className="absolute top-[107px] left-[0] w-[424px] h-auto"
+      />
       <div className="absolute z-[80] top-1 right-4">
         <IconButton
           handleClick={() => setIsPopUpShown(false)}
