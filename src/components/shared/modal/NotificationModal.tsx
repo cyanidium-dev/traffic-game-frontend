@@ -1,24 +1,19 @@
 import { Dispatch, SetStateAction } from "react";
-import CallBackForm from "../forms/CallBackForm";
 import Modal from "./Modal";
 
-interface CallbackFormModalProps {
-  isPopUpShown: boolean;
-  setIsPopUpShown: Dispatch<SetStateAction<boolean>>;
-  setIsError: Dispatch<SetStateAction<boolean>>;
-  setIsNotificationShown: Dispatch<SetStateAction<boolean>>;
+interface NotificationModalProps {
   title: string;
   description: string;
+  isPopUpShown: boolean;
+  setIsPopUpShown: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function CallbackFormModal({
-  isPopUpShown,
-  setIsPopUpShown,
-  setIsError,
-  setIsNotificationShown,
+export default function NotificationModal({
   title,
   description,
-}: CallbackFormModalProps) {
+  isPopUpShown,
+  setIsPopUpShown,
+}: NotificationModalProps) {
   return (
     <Modal isPopUpShown={isPopUpShown} setIsPopUpShown={setIsPopUpShown}>
       <h3
@@ -30,10 +25,6 @@ export default function CallbackFormModal({
       <p className="max-w-[208px] mx-auto mb-[26px] text-[14px] font-normal leading-[108%] text-center text-black">
         {description}
       </p>
-      <CallBackForm
-        setIsError={setIsError}
-        setIsNotificationShown={setIsNotificationShown}
-      />
     </Modal>
   );
 }
