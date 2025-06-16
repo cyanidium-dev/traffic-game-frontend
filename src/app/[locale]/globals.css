@@ -154,3 +154,16 @@
     box-shadow: 0 0 0 10px inset;
   }
 }
+
+/* Swiper */
+
+.swiper-wrapper {
+  align-items: stretch !important;
+}
+
+.swiper-slide {
+  flex-grow: 1 0;
+  height: 518px !important;
+  width: 245px !important;
+  border-radius: 8px;
+}

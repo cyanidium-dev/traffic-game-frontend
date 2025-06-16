@@ -2,41 +2,34 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ReactNode } from "react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Swiper } from "swiper/react";
-import { SwiperOptions } from "swiper/types";
-import { createPagination } from "./CustomPagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Post } from "@/types/post";
+import BlogCard from "./BlogCard";
 
 interface BlogSwiperProps {
-  children: ReactNode;
-  slidesPerView?: number | "auto" | undefined;
-  breakpoints: SwiperOptions["breakpoints"];
-  swiperClassName: string;
-  loop?: boolean;
-  isPagination?: boolean;
+  postsList: Post[];
 }
 
-export default function BlogSwiper({
-  children,
-  slidesPerView = "auto",
-  breakpoints,
-  swiperClassName,
-  loop = false,
-  isPagination = true,
-}: BlogSwiperProps) {
+export default function BlogSwiper({ postsList }: BlogSwiperProps) {
+  if (!postsList) return null;
+
   return (
     <Swiper
-      slidesPerView={slidesPerView}
-      pagination={isPagination ? createPagination(4) : false}
-      breakpoints={breakpoints}
+      slidesPerView="auto"
+      spaceBetween={20}
+      //   breakpoints={breakpoints}
       navigation={true}
-      loop={loop}
+      loop={true}
       speed={1000}
       modules={[Navigation, Pagination]}
-      className={swiperClassName}
+      className={``}
     >
-      {children}
+      {postsList.map((post, idx) => (
+        <SwiperSlide key={idx}>
+          <BlogCard post={post} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
