@@ -17,7 +17,7 @@ const container = {
 
 const letter = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.7 } },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
 };
 
 export default function SectionTitle({

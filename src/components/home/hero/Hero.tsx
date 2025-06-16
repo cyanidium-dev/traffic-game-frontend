@@ -4,7 +4,7 @@ import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import { useTranslations } from "next-intl";
 import MarqueeLine from "./MarqueeLine";
-import JoinUs from "./JoinUs";
+import JoinUs from "../../shared/joinUs/JoinUs";
 
 export default function Hero() {
   const t = useTranslations("homePage.hero");
@@ -31,12 +31,12 @@ export default function Hero() {
             whileInView="visible"
             exit="exit"
             viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInAnimation({ y: 30, delay: 1 })}
+            variants={fadeInAnimation({ y: 30, scale: 0.9, delay: 1 })}
             className="mb-[368px] md:mb-7 text-[14px] font-light text-center md:text-left"
           >
             {t("description")}
           </motion.h1>
-          <JoinUs />
+          <JoinUs buttonText={t("button")} />
         </div>
       </Container>
     </section>

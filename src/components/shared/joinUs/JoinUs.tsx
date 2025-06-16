@@ -1,12 +1,18 @@
 "use client";
 import { useState } from "react";
+import * as motion from "motion/react-client";
+import { fadeInAnimation } from "@/utils/animationVariants";
 import MainButton from "@/components/shared/buttons/MainButton";
 import CallbackFormModal from "@/components/shared/modal/CallbackFormModal";
 import { useTranslations } from "next-intl";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import NotificationModal from "@/components/shared/modal/NotificationModal";
 
-export default function JoinUs() {
+interface JoinUsProps {
+  buttonText: string;
+}
+
+export default function JoinUs({ buttonText }: JoinUsProps) {
   const t = useTranslations();
   const [isPopUpShown, setIsPopUpShown] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -14,9 +20,18 @@ export default function JoinUs() {
 
   return (
     <>
-      <MainButton onClick={() => setIsPopUpShown(true)}>
-        {t("homePage.hero.button")}
-      </MainButton>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        exit="exit"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeInAnimation({ delay: 1, scale: 0.9, y: 30 })}
+        className="w-full"
+      >
+        <MainButton onClick={() => setIsPopUpShown(true)}>
+          {buttonText}
+        </MainButton>
+      </motion.div>
       <CallbackFormModal
         isPopUpShown={isPopUpShown}
         setIsPopUpShown={setIsPopUpShown}
@@ -36,8 +51,12 @@ export default function JoinUs() {
         setIsPopUpShown={setIsNotificationShown}
       />
       <Backdrop
-        isVisible={isPopUpShown}
-        onClick={() => setIsPopUpShown(false)}
+        isVisible={isPopUpShown || isNotificationShown}
+        onClick={
+          isNotificationShown
+            ? () => setIsNotificationShown(false)
+            : () => setIsPopUpShown(false)
+        }
       />
     </>
   );

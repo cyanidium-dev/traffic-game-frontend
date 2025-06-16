@@ -19,13 +19,14 @@ export interface ValuesCallBackFormType {
 interface CallBackFormProps {
   setIsError: Dispatch<SetStateAction<boolean>>;
   setIsNotificationShown: Dispatch<SetStateAction<boolean>>;
-  setIsPopUpShown?: Dispatch<SetStateAction<boolean>>;
+  setIsPopUpShown: Dispatch<SetStateAction<boolean>>;
   className?: string;
 }
 
 export default function CallBackForm({
   setIsError,
   setIsNotificationShown,
+  setIsPopUpShown,
   className = "",
 }: CallBackFormProps) {
   const t = useTranslations("forms");
@@ -46,14 +47,14 @@ export default function CallBackForm({
   ) => {
     const { resetForm } = formikHelpers;
     const data =
-      `<b>Заявка "Форма "Залиш свої контакти"</b>\n` +
+      `<b>Форма "Залиш свої контакти"</b>\n` +
       `<b>Ім'я:</b> ${values.name.trim()}\n` +
       `<b>Email:</b> ${values.email.trim()}\n` +
       `<b>Посилання на CV:</b> ${values.cv.trim()}\n` +
       `<b>Повідомлення:</b> ${values.message.trim()}\n`;
     try {
       setIsLoading(true);
-
+      setIsError(false);
       await axios({
         method: "post",
         url: "/api/telegram",
@@ -62,7 +63,7 @@ export default function CallBackForm({
           "Content-Type": "application/json",
         },
       });
-
+      setIsPopUpShown(false);
       resetForm();
       setIsNotificationShown(true);
     } catch (error) {
