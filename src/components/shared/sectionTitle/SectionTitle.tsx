@@ -38,10 +38,10 @@ export default function SectionTitle({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className={`relative inline-block ${className}`}
+      className={`relative ${className}`}
     >
       {/* Тіньовий шар під низом */}
-      <motion.h2
+      <motion.p
         className="absolute inset-0 font-actay font-bold leading-none uppercase text-transparent pointer-events-none select-none [text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]"
         aria-hidden="true"
         variants={container}
@@ -55,7 +55,7 @@ export default function SectionTitle({
             {char === " " ? "\u00A0" : char}
           </motion.span>
         ))}
-      </motion.h2>
+      </motion.p>
 
       {/* Основний текст з градієнтом */}
       <motion.h2

@@ -22,7 +22,7 @@ export default function Hero() {
         <MarqueeLine />
       </motion.div>
       <Container className="md:flex md:justify-between">
-        <SectionTitle className="max-w-[311px] xl:max-w-[624px] mx-auto md:mx-0 mb-3 xl:mb-0 text-[64px] xl:text-[129px] text-center md:text-left">
+        <SectionTitle className="max-w-[331px] xl:max-w-[644px] mx-auto md:mx-0 mb-3 xl:mb-0 text-[64px] xl:text-[129px] text-center md:text-left">
           {t("title")}
         </SectionTitle>
         <div className="md:max-w-[251px]">
