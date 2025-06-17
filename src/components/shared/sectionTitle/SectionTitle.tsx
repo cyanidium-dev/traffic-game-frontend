@@ -25,7 +25,7 @@ export default function SectionTitle({
   className = "",
   variant = "light",
 }: SectionTitleProps) {
-  const letters = children.split("");
+  const words = children.split(" ").map((word) => word.split(""));
 
   const gradient =
     variant === "light"
@@ -40,35 +40,53 @@ export default function SectionTitle({
       viewport={{ once: true, amount: 0.2 }}
       className={`relative ${className}`}
     >
-      {/* Тіньовий шар під низом */}
+      {/* Тінь */}
       <motion.p
-        className={`absolute inset-0 font-actay font-bold leading-none uppercase text-transparent pointer-events-none select-none ${variant === "light" ? "[text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]" : ""} `}
+        className={`absolute inset-0 font-actay font-bold leading-none uppercase text-transparent pointer-events-none select-none ${
+          variant === "light"
+            ? "[text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]"
+            : ""
+        }`}
         aria-hidden="true"
         variants={container}
       >
-        {letters.map((char, index) => (
-          <motion.span
-            key={`shadow-${index}`}
-            variants={letter}
-            style={{ display: "inline-block" }}
+        {words.map((word, wordIdx) => (
+          <span
+            key={`shadow-word-${wordIdx}`}
+            className="whitespace-nowrap mr-[0.25em]"
           >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
+            {word.map((char, charIdx) => (
+              <motion.span
+                key={`shadow-char-${wordIdx}-${charIdx}`}
+                variants={letter}
+                style={{ display: "inline-block" }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
         ))}
       </motion.p>
 
-      {/* Основний текст з градієнтом */}
+      {/* Текст */}
       <motion.h2
         className={`relative font-actay font-bold leading-none uppercase text-transparent bg-clip-text ${gradient}`}
       >
-        {letters.map((char, index) => (
-          <motion.span
-            key={index}
-            variants={letter}
-            style={{ display: "inline-block" }}
+        {words.map((word, wordIdx) => (
+          <span
+            key={`word-${wordIdx}`}
+            className="whitespace-nowrap mr-[0.25em]"
           >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
+            {word.map((char, charIdx) => (
+              <motion.span
+                key={`char-${wordIdx}-${charIdx}`}
+                variants={letter}
+                style={{ display: "inline-block" }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
         ))}
       </motion.h2>
     </motion.div>

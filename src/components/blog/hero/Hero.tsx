@@ -6,7 +6,7 @@ export default function Hero() {
   const t = useTranslations("blogPage");
 
   return (
-    <section className="pt-[252px] pb-[255px] xl:pt-[49px] xl:pb-[330px]">
+    <section className="pt-[340px] pb-[255px] xl:pt-[137px] xl:pb-[330px]">
       <Container>
         <div className="flex flex-col gap-y-5 md:flex-row-reverse md:justify-between">
           <SectionTitle className="md:max-w-[155px] xl:max-w-[305px] mx-auto md:mx-0 text-[48px] xl:text-[96px] text-center md:text-left">
