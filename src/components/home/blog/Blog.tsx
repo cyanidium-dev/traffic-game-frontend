@@ -1,4 +1,3 @@
-import Container from "@/components/shared/container/Container";
 import ArrowIcon from "@/components/shared/icons/ArrowIcon";
 import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import { Link } from "@/i18n/navigation";
