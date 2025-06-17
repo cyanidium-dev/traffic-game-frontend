@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export const usePostsItemsPerPage = () => {
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updateItemsPerPage = () => {
       const width = window.innerWidth;
 

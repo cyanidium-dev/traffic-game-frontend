@@ -12,8 +12,6 @@ interface BlogListProps {
 }
 
 export default function BlogList({ postsList }: BlogListProps) {
-  const ITEMS_PER_PAGE = usePostsItemsPerPage();
-
   const SECTION_ID = "blog-page-posts-list";
 
   if (!postsList) return null;
@@ -24,7 +22,7 @@ export default function BlogList({ postsList }: BlogListProps) {
         <Pagination
           items={postsList}
           scrollTargetId={SECTION_ID}
-          useItemsPerPage={() => ITEMS_PER_PAGE}
+          useItemsPerPage={usePostsItemsPerPage}
           renderItems={(currentItems) => (
             <motion.ul
               initial="hidden"
@@ -32,11 +30,11 @@ export default function BlogList({ postsList }: BlogListProps) {
               exit="exit"
               viewport={{ once: true, amount: 0.2 }}
               variants={listVariants({
-                staggerChildren: 0.4,
-                delayChildren: 0.8,
+                staggerChildren: 0.3,
+                delayChildren: 0.4,
               })}
               id={SECTION_ID}
-              className="flex flex-col gap-5 sm:flex-row sm:flex-wrap"
+              className="flex flex-col gap-5 xl:gap-y-12 sm:flex-row sm:flex-wrap"
             >
               {currentItems.map((post) => (
                 <BlogCard key={post.id} post={post} />
