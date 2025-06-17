@@ -7,7 +7,7 @@ export default function ContactsInfo() {
   const t = useTranslations("contactsPage");
 
   return (
-    <section className="pt-[122px] xl:pt-30 pb-[61px] xl:pb-[371px]">
+    <section className="pt-[210px] xl:pt-[208px] pb-[61px] xl:pb-[371px]">
       <Container>
         <div className="md:flex md:justify-between mb-[422px] md:mb-[371px]">
           <div className="">

@@ -10,7 +10,7 @@ export default function Hero() {
   const t = useTranslations("homePage.hero");
 
   return (
-    <section className="relative pt-11 pb-9 md:pt-[30px] md:pb-[524px]">
+    <section className="relative pt-33 pb-9 md:pt-[118px] md:pb-[524px]">
       <motion.div
         initial="hidden"
         whileInView="visible"

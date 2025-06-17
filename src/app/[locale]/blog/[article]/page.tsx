@@ -55,8 +55,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        <Hero />
-        <Description />
+        <Hero article={currentArticle} />
+        <Description article={currentArticle} />
       </Suspense>
       <WorkTogetherCTA />
     </>
