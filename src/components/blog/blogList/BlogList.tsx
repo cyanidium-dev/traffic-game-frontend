@@ -31,7 +31,7 @@ export default function BlogList({ postsList }: BlogListProps) {
               viewport={{ once: true, amount: 0.2 }}
               variants={listVariants({
                 staggerChildren: 0.3,
-                delayChildren: 0.3,
+                delayChildren: 0.4,
               })}
               id={SECTION_ID}
               className="flex flex-col gap-5 xl:gap-y-12 sm:flex-row sm:flex-wrap"
