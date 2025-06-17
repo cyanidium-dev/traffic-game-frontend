@@ -19,3 +19,14 @@ export const singlePostQuery = `
     "image": image.asset->url,
      }
 `;
+
+export const allVacanciesQuery = `
+  *[_type == "vacancy"]  | order(_createdAt desc) {
+    "id": _id,
+    "slug": slug.current,
+    "title": title[$lang],
+    "description": description[$lang],
+    "requirements": requirements[$lang],
+    "offers": offers[$lang],
+  }
+`;
