@@ -16,8 +16,8 @@ export default function Blog({ postsList }: BlogProps) {
 
   return (
     <section className="pt-[299px] xl:pt-[316px]">
-      <Container className="sm:flex gap-5 mb-10 sm:mb-0 overflow-hidden">
-        <div className="relative sm:w-[245px] px-5 pt-9 pb-4.5 bg-white rounded-[8px] shrink-0">
+      <div className="sm:flex gap-5 mb-10 sm:mb-0 overflow-hidden xs:max-w-full sm:max-w-full xl:max-w-[1280px] px-6 sm:pr-0 lg:pl-20 xl:px-30 mx-auto sm:mr-0 sm:ml-[calc((100vw-640px)/2)] md:ml-[calc((100vw-768px)/2)] lg:ml-[calc((100vw-1024px)/2)] xl:mx-auto">
+        <div className="relative sm:w-[245px] px-5 pt-9 pb-4.5 bg-white rounded-[8px] shrink-0 max-h-[516px]">
           <SectionTitle
             variant="dark"
             className="max-w-[171px] mb-3 text-[48px]"
@@ -45,10 +45,9 @@ export default function Blog({ postsList }: BlogProps) {
           />
         </div>
         <div className="hidden sm:block w-[calc(100%-245px-20px)]">
-          {" "}
           <BlogSwiper postsList={postsList} />
         </div>
-      </Container>
+      </div>
       <div className="sm:hidden xs:max-w-full sm:max-w-[640px] pl-6 ml-auto">
         <BlogSwiper postsList={postsList} />
       </div>

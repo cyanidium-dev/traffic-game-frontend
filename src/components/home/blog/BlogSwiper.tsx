@@ -2,7 +2,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Post } from "@/types/post";
 import BlogCard from "./BlogCard";
@@ -22,12 +22,13 @@ export default function BlogSwiper({ postsList }: BlogSwiperProps) {
       navigation={true}
       loop={true}
       speed={1000}
-      modules={[Navigation, Pagination]}
+      modules={[Pagination]}
+      pagination={{ clickable: true }}
       className={``}
     >
       {postsList.map((post, idx) => (
         <SwiperSlide key={idx}>
-          <BlogCard post={post} />
+          <BlogCard post={post} idx={idx} />
         </SwiperSlide>
       ))}
     </Swiper>
