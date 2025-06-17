@@ -7,6 +7,8 @@ interface BlogListProps {
 }
 
 export default function BlogList({ postsList }: BlogListProps) {
+  if (!postsList) return null;
+
   return (
     <section>
       <Container>
