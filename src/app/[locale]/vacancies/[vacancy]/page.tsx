@@ -54,8 +54,8 @@ export default async function VacancyPage({ params }: VacancyPageProps) {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        <Hero />
-        <Description />
+        <Hero vacancy={currentVacancy} />
+        <Description vacancy={currentVacancy} />
       </Suspense>
     </>
   );

@@ -19,7 +19,7 @@ const letter = {
   visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
 };
 
-export default function SectionTitle({
+export default function PageTitle({
   children,
   className = "",
 }: SectionTitleProps) {
@@ -31,14 +31,12 @@ export default function SectionTitle({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className={`relative ${className}`}
+      className={`relative w-fit ${className}`}
     >
       {/* Тінь */}
       <motion.p
-        className={`absolute inset-0 font-actay text-[48px] xl:text-[96px] font-bold leading-none uppercase text-transparent pointer-events-none select-none bg-[linear-gradient(112deg,_#ffffff_30.78%,_#B22A7C_80.94%)]
-           "[text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]"
-         
-        `}
+        className={`absolute inset-0 font-actay text-[48px] xl:text-[96px] font-bold leading-none uppercase text-transparent pointer-events-none select-none
+           [text-shadow:3.508px_2.923px_8.916px_rgba(255,0,166,0.2)]`}
         aria-hidden="true"
         variants={container}
       >
@@ -62,7 +60,7 @@ export default function SectionTitle({
 
       {/* Текст */}
       <motion.h1
-        className={`relative font-actay text-[48px] xl:text-[96px] font-bold leading-none uppercase text-transparent bg-clip-text bg-[linear-gradient(112deg,_#ffffff_30.78%,_#B22A7C_80.94%)`}
+        className={`relative font-actay text-[48px] xl:text-[96px] font-bold leading-none uppercase text-transparent bg-clip-text bg-[linear-gradient(112deg,_#ffffff_30.78%,_#B22A7C_80.94%)]`}
       >
         {words.map((word, wordIdx) => (
           <span

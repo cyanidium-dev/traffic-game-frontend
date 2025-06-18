@@ -10,9 +10,10 @@ import NotificationModal from "@/components/shared/modal/NotificationModal";
 
 interface JoinUsProps {
   buttonText: string;
+  title: string;
 }
 
-export default function JoinUs({ buttonText }: JoinUsProps) {
+export default function JoinUs({ buttonText, title }: JoinUsProps) {
   const t = useTranslations();
   const [isPopUpShown, setIsPopUpShown] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -37,7 +38,7 @@ export default function JoinUs({ buttonText }: JoinUsProps) {
         setIsPopUpShown={setIsPopUpShown}
         setIsNotificationShown={setIsNotificationShown}
         setIsError={setIsError}
-        title={t("modals.leaveContacts")}
+        title={title}
         description={t("modals.description")}
       />
       <NotificationModal
