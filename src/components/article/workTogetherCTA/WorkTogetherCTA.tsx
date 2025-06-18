@@ -1,6 +1,6 @@
 import MainButton from "@/components/shared/buttons/MainButton";
 import Container from "@/components/shared/container/Container";
-import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
+import SectionTitle from "@/components/shared/titles/SectionTitle";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 

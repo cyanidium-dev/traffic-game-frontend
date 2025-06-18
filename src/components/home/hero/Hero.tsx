@@ -1,13 +1,13 @@
 import * as motion from "motion/react-client";
 import { fadeInAnimation } from "@/utils/animationVariants";
 import Container from "@/components/shared/container/Container";
-import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
+import SectionTitle from "@/components/shared/titles/SectionTitle";
 import { useTranslations } from "next-intl";
 import MarqueeLine from "./MarqueeLine";
 import JoinUs from "../../shared/joinUs/JoinUs";
 
 export default function Hero() {
-  const t = useTranslations("homePage.hero");
+  const t = useTranslations();
 
   return (
     <section className="relative pt-33 pb-9 md:pt-[118px] md:pb-[524px]">
@@ -23,7 +23,7 @@ export default function Hero() {
       </motion.div>
       <Container className="md:flex md:justify-between">
         <SectionTitle className="max-w-[331px] xl:max-w-[644px] mx-auto md:mx-0 mb-3 xl:mb-0 text-[64px] xl:text-[129px] text-center md:text-left">
-          {t("title")}
+          {t("homePage.hero.title")}
         </SectionTitle>
         <div className="md:max-w-[251px]">
           <motion.h1
@@ -34,9 +34,12 @@ export default function Hero() {
             variants={fadeInAnimation({ y: 30, scale: 0.9, delay: 1 })}
             className="mb-[368px] md:mb-7 text-[14px] font-light text-center md:text-left"
           >
-            {t("description")}
+            {t("homePage.hero.description")}
           </motion.h1>
-          <JoinUs buttonText={t("button")} />
+          <JoinUs
+            buttonText={t("homePage.hero.button")}
+            title={t("modals.leaveContacts")}
+          />
         </div>
       </Container>
     </section>

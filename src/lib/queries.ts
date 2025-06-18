@@ -30,3 +30,14 @@ export const allVacanciesQuery = `
     "offers": offers[$lang],
   }
 `;
+
+export const singleVacancyQuery = `
+  *[_type == "vacancy" && slug.current == $slug][0]{
+    "id": _id,
+    "slug": slug.current,
+    "title": title[$lang],
+    "description": description[$lang],
+    "requirements": requirements[$lang],
+    "offers": offers[$lang],
+     }
+`;
