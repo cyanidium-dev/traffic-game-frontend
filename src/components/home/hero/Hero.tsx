@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client";
 import { fadeInAnimation } from "@/utils/animationVariants";
 import Container from "@/components/shared/container/Container";
-import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
+import SectionTitle from "@/components/shared/titles/SectionTitle";
 import { useTranslations } from "next-intl";
 import MarqueeLine from "./MarqueeLine";
 import JoinUs from "../../shared/joinUs/JoinUs";

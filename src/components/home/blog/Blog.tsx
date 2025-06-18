@@ -1,5 +1,5 @@
 import ArrowIcon from "@/components/shared/icons/ArrowIcon";
-import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
+import SectionTitle from "@/components/shared/titles/SectionTitle";
 import { Link } from "@/i18n/navigation";
 import { Post } from "@/types/post";
 import { useTranslations } from "next-intl";
