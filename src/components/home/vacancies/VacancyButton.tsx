@@ -11,7 +11,7 @@ export default function VacancyButton({
   className = "",
 }: VacancyButtonProps) {
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/vacancies/${slug}`}>
       <button
         type="button"
         aria-label="icon button"
