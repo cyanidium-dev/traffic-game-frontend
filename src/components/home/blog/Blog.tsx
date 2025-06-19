@@ -40,7 +40,7 @@ export default function Blog({ postsList }: BlogProps) {
             alt="man"
             width={313}
             height={470}
-            className="absolute left-0 bottom-0 mix-blend-hard-light"
+            className="absolute left-0 bottom-0 mix-blend-hard-light pointer-events-none"
           />
         </div>
         <div className="hidden sm:block w-[calc(100%-245px-20px)]">

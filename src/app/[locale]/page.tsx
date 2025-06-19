@@ -7,7 +7,7 @@ import Partners from "@/components/home/partners/Partners";
 import Vacancies from "@/components/home/vacancies/Vacancies";
 import { Locale } from "next-intl";
 import { fetchSanityData } from "@/utils/fetchSanityData";
-import { allPostsQuery } from "@/lib/queries";
+import { allPostsQuery, allVacanciesQuery } from "@/lib/queries";
 import { Suspense } from "react";
 import Loader from "@/components/shared/loader/Loader";
 
@@ -17,7 +17,12 @@ interface HomePageProps {
 
 export default async function Home({ params }: HomePageProps) {
   const { locale } = await params;
+
   const postsList = await fetchSanityData(allPostsQuery, {
+    lang: locale,
+  });
+
+  const vacanciesList = await fetchSanityData(allVacanciesQuery, {
     lang: locale,
   });
 
@@ -27,7 +32,9 @@ export default async function Home({ params }: HomePageProps) {
       <Benefits />
       <Partners />
       <About />
-      <Vacancies />
+      <Suspense fallback={<Loader />}>
+        <Vacancies vacanciesList={vacanciesList} />
+      </Suspense>
       <Suspense fallback={<Loader />}>
         <Blog postsList={postsList} />
       </Suspense>
