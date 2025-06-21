@@ -5,8 +5,8 @@ import { burgerMenuVariants } from "@/utils/animationVariants";
 import Container from "../container/Container";
 import MarqueeLine from "./MarqueeLine";
 import Image from "next/image";
-import TrafficGame from "./TrafficGame";
 import { fadeInAnimation } from "@/utils/animationVariants";
+import TrafficGame from "../trafficGame/TrafficGame";
 
 interface BurgerMenuMobTabProps {
   isHeaderMenuOpened: boolean;
@@ -38,9 +38,16 @@ export default function BurgerMenu({
               alt="background"
             />
           </div>
-          <div className="absolute -z-10 top-[-68px] left-[50px] pointer-events-none">
-            <TrafficGame />
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            exit="exit"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={fadeInAnimation({ delay: 0.6, scale: 0.9 })}
+            className="absolute -z-10 top-[-68px] left-[50px] pointer-events-none"
+          >
+            <TrafficGame className="text-[77px] rotate-[-10deg] bg-[linear-gradient(241deg,_#4A0631_55.77%,_#111_95.53%)]" />
+          </motion.div>
           <div className="flex flex-col gap-y-16 justify-between w-[100vw] h-[calc(100dvh-88px)] mt-22 pt-[130px] pb-[42px] overflow-y-auto overflow-x-hidden">
             <Container className="w-full">
               <motion.div
