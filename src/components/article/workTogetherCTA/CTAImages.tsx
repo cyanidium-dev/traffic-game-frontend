@@ -65,10 +65,19 @@ export default function CTAImages() {
       </div>
 
       <motion.div
-        style={{ y: y1 }}
-        className="absolute -z-20 top-[-220px] md:top-[305px] left-[-52px] md:left-[-11px] pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        exit="exit"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeInAnimation({ scale: 0.9 })}
       >
-        <TrafficGame className="max-w-[321px] text-[102px] md:text-[121px] rotate-[-10deg] bg-[linear-gradient(230deg,_#121212_20.29%,_#B00F74_95.97%)]" />
+        {" "}
+        <motion.div
+          style={{ y: y1 }}
+          className="absolute -z-20 top-[-220px] md:top-[305px] left-[-52px] md:left-[-11px] pointer-events-none"
+        >
+          <TrafficGame className="max-w-[321px] text-[102px] md:text-[121px] rotate-[-10deg] bg-[linear-gradient(230deg,_#121212_20.29%,_#B00F74_95.97%)]" />
+        </motion.div>
       </motion.div>
 
       <motion.div
@@ -76,7 +85,7 @@ export default function CTAImages() {
         whileInView="visible"
         exit="exit"
         viewport={{ once: true, amount: 0.1 }}
-        variants={fadeInAnimation({ delay: 0.6, scale: 0.9 })}
+        variants={fadeInAnimation({ delay: 2.6, scale: 0.9 })}
         className="md:hidden absolute z-10 top-[73px] left-[calc(50%-112px)] w-[450px] h-[582px] pointer-events-none"
       >
         <Image
@@ -93,7 +102,7 @@ export default function CTAImages() {
         whileInView="visible"
         exit="exit"
         viewport={{ once: true, amount: 0.1 }}
-        variants={fadeInAnimation({ delay: 0.6, scale: 0.9 })}
+        variants={fadeInAnimation({ delay: 2.6, scale: 0.9 })}
         className="hidden md:block absolute -z-10 top-[-362px] xl:top-[-242px] left-[calc(50%-135px)] w-[811px] h-[1050px] pointer-events-none"
       >
         <motion.div
