@@ -22,7 +22,12 @@ export default function WorkTogetherCTA() {
           whileInView="visible"
           exit="exit"
           viewport={{ once: true, amount: 0.1 }}
-          variants={fadeInAnimation({ y: 30, delay: 1.8 })}
+          variants={fadeInAnimation({
+            y: 30,
+            delay: 1.6,
+            scale: 0.9,
+            duration: 0.7,
+          })}
           className="relative z-40 block max-w-[328px] mx-auto md:mx-0"
         >
           <Link href="/vacancies">
